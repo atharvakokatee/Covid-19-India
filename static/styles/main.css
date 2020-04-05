@@ -1,5 +1,38 @@
 
 h1{
-    font-family: 'Ultra', serif;
+    /* font-family: 'Ultra', serif; */
     margin-top: 1em;
+    font-weight: bold;
 }
+
+.nav-link{
+    color: #6a0dad;
+}
+
+.btn-1 {
+    background-image: linear-gradient(to right, #6a0dad, blue);
+  }
+
+.navbar-collapse  a:active{
+      color: #6a0dad;
+  }
+
+#deaths{
+    background: linear-gradient(#f07470,#f1959b);
+}
+
+#confirmed{
+    background: linear-gradient(#7ae5f5,#c9f6ff);
+}
+
+#recovered{
+    background: linear-gradient(#78ec6c,#ddf969);
+}
+
+.table-responsive {
+    display: block;
+    height: 500px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+}
+

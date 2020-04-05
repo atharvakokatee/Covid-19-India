@@ -3,14 +3,36 @@
 {% block body %}
 
 <div class="container">
-    <h1 style="font-size: 2em;">Coronavirus (COVID-19) India</h1>
+    <div class="row" style="justify-content: center;">
+        <div class="col-md-3" style="vertical-align: middle;  display: flex;align-items: center;">
+            <h4><strong>COVID-19 INDIA</strong><br><span>
+                <h6 style="font-size: 0.6em;">{{ generate_data[0] }}</h6>
+            </span></h4>
+            
+        </div>
+        <div id="confirmed" class="col-md-2 card" style="margin:20px 10px;padding: 20px;background-color: aqua; align-items: center; border-radius: 1em;">
+            <img src="/static/Images/icon-death.png" style="max-width: 32px; max-height: 32px;" alt="">
+            <h2 style="margin-bottom: 0;"><strong>{{ generate_data[1] }}</strong></h2>
+            <h6 style="margin:0;">Confirmed</h6>
+        </div>
+        <div id="recovered" class="col-md-2 card" style="margin:20px 10px;padding: 20px;background-color: aqua; align-items: center; border-radius: 1em;">
+            <img src="/static/Images/icon-inactive.png" style="max-width: 32px; max-height: 32px;" alt="">
+            <h2 style="margin-bottom: 0;"><strong>{{ generate_data[2] }}</strong></h2>
+            <h6 style="margin:0;">Recovered</h6>
+        </div>
+        <div id="deaths" class="col-md-2 card" style="margin:20px 10px;padding: 20px;background-color: aqua; align-items: center; border-radius: 1em;">
+            <img src="/static/Images/icon-death.png" style="max-width: 32px; max-height: 32px;" alt="">
+            <h2 style="margin-bottom: 0;"><strong>{{ generate_data[3] }}</strong></h2>
+            <h6 style="margin:0;">Deaths</h6>
+        </div>
+    </div>
     <div class="col-md-12 card">
         <div style="width: 100%;" id="regions_div"></div>
     </div>
 
     <h1 style="font-size: 2em;">Statistics</h1>
     <div class="table-responsive">
-        <table class="table table-hover" id="userdata">
+        <table class="table table-hover table-striped" id="userdata">
             <thead>
                 <th scope="col">State</th>
                 <th scope="col">Confirmed</th>

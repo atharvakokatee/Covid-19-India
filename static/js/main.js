@@ -3,7 +3,7 @@
 $.getJSON('./static/data.json', function(data){
   
   var final=[['State','Confirmed']]
-  for(let i=0;i<data.length-1;i++){
+  for(let i=0;i<data.length;i++){
     var temp = []
     if(data[i].state == "Chhattishgarh"){
       temp.push("Chhattisgarh");

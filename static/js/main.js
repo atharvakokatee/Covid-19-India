@@ -24,8 +24,6 @@ $.getJSON('./static/data.json', function(data){
   console.log(final);
   google.charts.load('current', {
     'packages':['geochart'],
-    // Note: you will need to get a mapsApiKey for your project.
-    // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
     'mapsApiKey': 'yo-mama-mah-bitch'
   });
   google.charts.setOnLoadCallback(drawRegionsMap);

@@ -24,9 +24,7 @@ $.getJSON('./static/data.json', function(data){
   console.log(final);
   google.charts.load('current', {
     'packages':['geochart'],
-    // Note: you will need to get a mapsApiKey for your project.
-    // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+    'mapsApiKey': 'yo-mama-mah-bitch'
   });
   google.charts.setOnLoadCallback(drawRegionsMap);
 
@@ -74,13 +72,8 @@ $.getJSON('./static/data.json', function(data){
   }
 
 });
-
-// ['IN-AN', 'IN-AP','IN-AR','IN-AS','IN-BR','IN-CH','IN-CT','IN-DL',
-// 'IN-GA','IN-GJ','IN-HR','IN-HP','IN-JH','IN-KA','IN-KL','IN-MP',
-// 'IN-MH','IN-MN','IN-MZ','IN-OR','IN-PY','IN-PB','IN-RJ','IN-TN','IN-TG',
-// 'IN-JK','IN-UP','IN-UT','IN-WB']
-
-// ['State Code', 'State', 'Temperature'],     
+// State Codes for Google-charts
+// [['State Code', 'State', 'Temperature'],     
 // [ 'IN-UP','Uttar Pradesh', 33],
 // ['IN-MH','Maharashtra', 32],
 // ['IN-BR','Bihar', 31],
@@ -116,8 +109,7 @@ $.getJSON('./static/data.json', function(data){
 // ['IN-AN','Andaman and Nicobar Islands', 30],
 // ['IN-DN','Dadra and Nagar Haveli', 30],
 // ['IN-DD','Daman and Diu', 29],
-// ['IN-LD','Lakshadweep', 31]
-// ]);
+// ['IN-LD','Lakshadweep', 31]];
 
 
 

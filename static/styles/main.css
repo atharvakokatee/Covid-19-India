@@ -10,6 +10,10 @@ h1{
     color: #6a0dad;
 }
 
+.nav{
+    margin-bottom: 20px;
+}
+
 .btn-1 {
     background-image: linear-gradient(#6a0dad, blue);
   }
@@ -72,6 +76,11 @@ h6{
     margin: 0;
 }
 
-.col-md-12{
+#regions_div{
     width: 100%;
 }
+
+.card{
+    margin-top: 0;
+}
+

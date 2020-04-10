@@ -21,10 +21,10 @@ $.getJSON('./static/data.json', function(data){
     temp.push(Number(data[i].confirmed));
     final.push(temp);    
   }
-  console.log(final);
+  // console.log(final);
   google.charts.load('current', {
     'packages':['geochart'],
-    'mapsApiKey': 'yo-mama-mah-bitch'
+    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
   });
   google.charts.setOnLoadCallback(drawRegionsMap);
 
@@ -36,6 +36,8 @@ $.getJSON('./static/data.json', function(data){
         domain: 'IN',
         resolution: 'provinces',
         displayMode: 'regions',
+        height:'100%',
+        width:'100%',
         colorAxis:{colors:['rgb(63,224,208)','rgb(0,136,169)']},
         explorer: { 
           actions: ['dragToZoom', 'rightClickToReset'],
@@ -53,28 +55,30 @@ $.getJSON('./static/data.json', function(data){
   $(window).resize(function(){
     drawRegionsMap();
   });
-  var tbody = document.querySelector("tbody");
-  console.log(tbody);
-  for(let i=0;i<data.length;i++){
-    let row = tbody.insertRow();
-    let state = row.insertCell();
-    let confirmed = row.insertCell();
-    let recovered = row.insertCell();
-    let deaths = row.insertCell();
-    let state_text = document.createTextNode(data[i].state);
-    let confirmed_text = document.createTextNode(data[i].confirmed);
-    let recovered_text = document.createTextNode(data[i].recovered);
-    let deaths_text = document.createTextNode(data[i].deaths);
-    state.appendChild(state_text);
-    confirmed.appendChild(confirmed_text);
-    recovered.appendChild(recovered_text);
-    deaths.appendChild(deaths_text);
-  }
 
+  var tbody = document.querySelector("tbody");
+  // console.log(data);
+  let tbodyTemplate = "";
+  data.forEach(function(state_info){
+    let template = `
+    <tr>
+    <td>${ state_info.state }</td>
+    <td>${ state_info.confirmed }</td>
+    <td>${ state_info.recovered }</td>
+    <td>${ state_info.deaths }</td>
+    </tr>`;
+    tbodyTemplate += template;
+  });
+  // console.log(tbodyTemplate);
+  tbody.innerHTML = tbodyTemplate;
 });
 
-// State Codes for google-chart
-// [['State Code', 'State', 'Temperature'],     
+// ['IN-AN', 'IN-AP','IN-AR','IN-AS','IN-BR','IN-CH','IN-CT','IN-DL',
+// 'IN-GA','IN-GJ','IN-HR','IN-HP','IN-JH','IN-KA','IN-KL','IN-MP',
+// 'IN-MH','IN-MN','IN-MZ','IN-OR','IN-PY','IN-PB','IN-RJ','IN-TN','IN-TG',
+// 'IN-JK','IN-UP','IN-UT','IN-WB']
+
+// ['State Code', 'State', 'Temperature'],     
 // [ 'IN-UP','Uttar Pradesh', 33],
 // ['IN-MH','Maharashtra', 32],
 // ['IN-BR','Bihar', 31],
@@ -110,7 +114,8 @@ $.getJSON('./static/data.json', function(data){
 // ['IN-AN','Andaman and Nicobar Islands', 30],
 // ['IN-DN','Dadra and Nagar Haveli', 30],
 // ['IN-DD','Daman and Diu', 29],
-// ['IN-LD','Lakshadweep', 31]];
+// ['IN-LD','Lakshadweep', 31]
+// ]);
 
 
 
